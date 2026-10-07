@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Kayli's Library</title>
+    <meta name="description" content="A home library that lives on your phone.">
+    <meta name="theme-color" content="#22311d">
+
+    <!-- Lets iPhone "Add to Home Screen" open this as a full-screen app -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Library">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link rel="icon" href="icons/icon-192.png">
+
+    <link rel="stylesheet" href="css/app.css">
+    <!-- SQLite compiled for the browser: the library database lives on the phone -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+    <script type="module" src="js/app.js"></script>
+</head>
+<body>
+<header class="topbar">
+    <a class="brand" href="#/">
+        <img src="icons/icon-192.png" alt="">
+        <span>Kayli's Library</span>
+    </a>
+    <a class="topbar-link" href="#/backup" aria-label="Backup and settings">Backup</a>
+</header>
+
+<main id="view" class="view">
+    <p class="loading">Opening the library…</p>
+</main>
+
+<nav class="tabbar" aria-label="Main">
+    <a href="#/" data-tab="home"><span class="tab-icon">⌂</span>Home</a>
+    <a href="#/books" data-tab="books"><span class="tab-icon">☰</span>Catalog</a>
+    <a href="#/lend" data-tab="lend"><span class="tab-icon">⇄</span>Lend</a>
+    <a href="#/add" data-tab="add"><span class="tab-icon">＋</span>Add</a>
+    <a href="#/people" data-tab="people"><span class="tab-icon">☺</span>People</a>
+</nav>
+
+<div id="toasts" class="toasts" aria-live="polite"></div>
+</body>
+</html>
